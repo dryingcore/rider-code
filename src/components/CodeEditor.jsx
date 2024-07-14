@@ -4,7 +4,7 @@ import { Editor } from "@monaco-editor/react";
 export const CodeEditor = () => {
 	return (
 		<Box>
-			<Editor height="90vh" defaultLanguage="javascript" defaultValue="// some comment" />;
+			<Editor height="90vh" defaultLanguage="javascript" defaultValue="// some comment" theme="vs-dark" />;
 		</Box>
 	);
 };
