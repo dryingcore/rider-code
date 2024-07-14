@@ -6,16 +6,21 @@ import { LanguageSelector } from "./LanguageSelector";
 export const CodeEditor = () => {
 	const editorRef = useRef();
 	const [value, setValue] = useState("");
+	const [language, setLanguage] = useState("javascript");
 
 	const onMount = editor => {
 		editorRef.current = editor;
 		editor.focus();
 	};
 
+	const onSelect = language => {
+		setLanguage(language);
+	};
+
 	return (
 		<Box>
-			<LanguageSelector />
-			<Editor height="75vh" defaultLanguage="javascript" defaultValue="// some comment" theme="vs-dark" value={value} onChange={value => setValue(value)} onMount={onMount} />;
+			<LanguageSelector language={language} onSelect={onSelect} />
+			<Editor height="75vh" language={language} defaultValue="// some comment" theme="vs-dark" value={value} onChange={value => setValue(value)} onMount={onMount} />;
 		</Box>
 	);
 };
