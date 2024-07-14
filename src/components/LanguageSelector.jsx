@@ -1,19 +1,22 @@
 import { Box, Menu, MenuButton, Text, MenuItem, MenuList, Button } from "@chakra-ui/react";
 import { LANGUAGE_VERSIONS } from "../constants";
+import { useState } from "react";
 
 const languages = Object.entries(LANGUAGE_VERSIONS);
 
 export const LanguageSelector = () => {
+	const [language, setLanguage] = useState(languages[0][0]);
+
 	return (
 		<Box>
 			<Text mb={2} fontSize={"lg"}>
 				Language
 			</Text>
 			<Menu>
-				<MenuButton as={Button}>Javascript</MenuButton>
+				<MenuButton as={Button}>{language}</MenuButton>
 				<MenuList>
 					{languages.map(([language, version]) => (
-						<MenuItem key={language}>
+						<MenuItem key={language} onClick={() => setLanguage(language)}>
 							{language}
 							&nbsp;
 							<Text as="span" color="gray.500" fontSize="sm">
