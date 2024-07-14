@@ -1,7 +1,11 @@
 import { Box } from "@chakra-ui/react";
 
 function App() {
-	return <Box>asd</Box>;
+	return (
+		<Box minH="100vh" bg="">
+			asd
+		</Box>
+	);
 }
 
 export default App;
