@@ -8,10 +8,7 @@ export const LanguageSelector = () => {
 	const [language, setLanguage] = useState(languages[0][0]);
 
 	return (
-		<Box>
-			<Text mb={2} fontSize={"lg"}>
-				Language
-			</Text>
+		<Box mb={4}>
 			<Menu>
 				<MenuButton as={Button}>{language}</MenuButton>
 				<MenuList>
