@@ -6,7 +6,7 @@ export const CodeEditor = () => {
 	const [value, setValue] = useState(``);
 	return (
 		<Box>
-			<Editor height="vh" defaultLanguage="javascript" defaultValue="// some comment" theme="vs-dark" value={value} />;
+			<Editor height="vh" defaultLanguage="javascript" defaultValue="// some comment" theme="vs-dark" value={value} onChange={value => setValue(value)} />;
 		</Box>
 	);
 };
