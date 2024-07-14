@@ -1,4 +1,7 @@
 import { Box, Menu, MenuButton, Text, MenuItem, MenuList, Button, ChevronDownIcon } from "@chakra-ui/react";
+import { LANGUAGE_VERSIONS } from "../constants";
+
+const languages = Object.entries(LANGUAGE_VERSIONS);
 
 export const LanguageSelector = () => {
 	return (
@@ -11,11 +14,15 @@ export const LanguageSelector = () => {
 					Javascript
 				</MenuButton>
 				<MenuList>
-					<MenuItem>Download</MenuItem>
-					<MenuItem>Create a Copy</MenuItem>
-					<MenuItem>Mark as Draft</MenuItem>
-					<MenuItem>Delete</MenuItem>
-					<MenuItem>Attend a Workshop</MenuItem>
+					{languages.map(([language, version]) => (
+						<MenuItem key={language}>
+							{language}
+							&nbsp;
+							<Text as="span" color="gray.500">
+								{version}
+							</Text>
+						</MenuItem>
+					))}
 				</MenuList>
 			</Menu>
 		</Box>
